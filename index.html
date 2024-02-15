@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Amazing ToDo APP</title>
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script type="application/javascript" defer src="assets/scripts/script.js"></script>
+
+</head>
+<body>
+
+<header class="app-header">
+    <div class="container">
+        <h1 class="app-title">My Amazing ToDo APP</h1>
+    </div>
+</header>
+
+<div class="app-wrapper container">
+
+    <div class="app-form card pb-0 mb-4">
+
+        <label class="d-flex">
+            <input type="text" id="todo-title" class="text-field" placeholder="Title">
+        </label>
+
+        <label class="d-flex">
+            <textarea rows="3" id="todo-description" class="text-field" placeholder="Description"></textarea>
+        </label>
+
+        <button class="btn bg-primary" id="todo-submit">Add task</button>
+
+    </div>
+
+    <div class="app-filter card mb-4">
+        <div class="d-flex ml-n2 mr-n2">
+
+            <div class="pl-2 pr-2 flex-100">
+                <button class="btn w-100 bg-primary" data-key="all" onclick="todo.setFilter(this)">
+                    All
+                    <span>0</span>
+                </button>
+            </div>
+
+            <div class="pl-2 pr-2 flex-100">
+                <button class="btn w-100" data-key="active" onclick="todo.setFilter(this)">
+                    Active
+                    <span>0</span>
+                </button>
+            </div>
+
+            <div class="pl-2 pr-2 flex-100">
+                <button class="btn w-100" data-key="completed" onclick="todo.setFilter(this)">
+                    Completed
+                    <span>0</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="app-todo-list card mb-4" id="todo-list"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+/* Global Styles */
+
+$index: 0;
+$directions: ['top' 't', 'bottom' 'b', 'left' 'l', 'right' 'r'];
+$displays: ["none", "block", "inline-block", "flex"];
+$flexProps: ['flex-direction' ['column', 'row'], 'flex-wrap' ['wrap', 'nowrap'], 'justify-content' ['flex-start', 'center', 'flex-end', 'space-around', 'space-between'], 'align-items' ['flex-start', 'center', 'flex-end', 'stretch', 'baseline']];
+
+:root {
+    --bg-color: #f6f8fd;
+    --bg-color-darken: #a9c1ff;
+    --primary-color: #1766e4;
+    --primary-color-darken: #0752d0;
+}
+
+* {
+    text-decoration: none;
+    font-family: 'sans-serif', Arial;
+    box-sizing: border-box;
+    line-height: 1.4;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(139 139 139 / 15%);
+        border-radius: 10px;
+    }
+
+}
+
+body{
+    background-color: var(--bg-color);
+    @extend .m-0, .p-0;
+}
+
+.m {
+    @for $i from 0 through 4 {
+
+        &-#{$i} {
+            margin: $index * 4 + px;
+        }
+
+        &-n#{$i} {
+            margin: ($index * 4) * -1 + px;
+        }
+
+        @each $direction, $key in $directions {
+            &#{$key}-#{$i} {
+                margin-#{$direction}: $index * 4 + px;
+            }
+            &#{$key}-n#{$i} {
+                margin-#{$direction}: ($index * 4) * -1 + px;
+            }
+        }
+
+        $index: $index + 1;
+
+    }
+
+    @each $direction, $key in $directions {
+        &#{$key}-auto {
+            margin-#{$direction}: auto;
+        }
+    }
+}
+
+.p {
+    @for $i from 0 through 4 {
+
+        &-#{$i} {
+            padding: $index * 4 + px;
+        }
+
+        @each $direction, $key in $directions {
+
+            &#{$key}-#{$i} {
+                padding-#{$direction}: $index * 4 + px;
+            }
+        }
+
+        $index: $index + 1;
+
+    }
+
+    @each $direction, $key in $directions {
+        &#{$key}-auto {
+            padding-#{$direction}: auto;
+        }
+    }
+}
+
+.d {
+    @each $display in $displays {
+        &-#{$display} {
+            display: #{$display};
+        }
+    }
+}
+
+.flex {
+    @each $key, $props in $flexProps {
+        @each $prop in $props {
+            &-#{$prop} {
+                #{$key}: #{$prop};
+            }
+        }
+    }
+
+    @for $i from 1 through 10 {
+        &-#{$i * 10} {
+            flex: #{$i * 10} + '%';
+        }
+    }
+}
+
+.w {
+    @for $i from 1 through 10 {
+        &-#{$i * 10} {
+            width: #{$i * 10} + '%';
+        }
+    }
+
+    &-auto {
+        width: auto;
+    }
+}
+
+.h {
+    @for $i from 1 through 10 {
+        &-#{$i * 10} {
+            height: #{$i * 10} + '%';
+        }
+    }
+
+    &-auto {
+        height: auto;
+    }
+}
+
+.rounded {
+    @for $i from 1 through 10 {
+        &-#{$i} {
+            border-radius: #{$i + 4} + px;
+        }
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 0 1rem rgba(220, 220, 220, 0.5)
+}
+
+.bg {
+    &-primary {
+        background-color: var(--primary-color);
+        color: white;
+    }
+}
+
+.container {
+    max-width: 600px;
+    @extend .ml-auto, .mr-auto, .pl-3, .pr-3;
+}
+
+.card {
+    background-color: white;
+    @extend .p-4, .box-shadow, .rounded-4;
+}
+
+.text-field {
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    resize: vertical;
+    @extend .p-3, .mb-4, .w-100, .rounded-4;
+
+    &:active, &:focus{
+        outline-color: var(--primary-color);
+    }
+}
+
+.btn {
+    @extend .pl-4, .pr-4, .pt-3, .pb-3, .rounded-4;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+
+    &.bg-primary{
+        &:hover{
+            background-color: var(--primary-color-darken);
+        }
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    position: relative;
+    transition: all .3s;
+    -webkit-appearance: none;
+    vertical-align: middle;
+    margin: 0;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+
+    &:before, &:after {
+        transition: all .3s;
+        vertical-align: middle;
+    }
+}
+
+[type="checkbox"] {
+    &:before {
+        content: '✔';
+        display: inline-block;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        line-height: 16px;
+        color: #fff;
+        text-align: center;
+        font-size: 0;
+        font-weight: bold;
+    }
+
+    &:checked {
+        &:before {
+            font-size: 14px;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    }
+}
+
+[type="radio"] {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        margin: 9px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+
+    &:checked {
+        &:before {
+            width: 14px;
+            height: 14px;
+            margin: 2px;
+        }
+    }
+}

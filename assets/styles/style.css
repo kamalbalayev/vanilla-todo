@@ -1,0 +1,621 @@
+@charset "UTF-8";
+/* Global Styles */
+:root {
+  --bg-color: #f6f8fd;
+  --bg-color-darken: #a9c1ff;
+  --primary-color: #1766e4;
+  --primary-color-darken: #0752d0;
+}
+
+* {
+  text-decoration: none;
+  font-family: "sans-serif", Arial;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 139, 139, 0.15);
+  border-radius: 10px;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.m-0, .app-title, body {
+  margin: 0px;
+}
+.m-n0 {
+  margin: 0px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.mt-n0 {
+  margin-top: 0px;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-n0 {
+  margin-bottom: 0px;
+}
+.ml-0 {
+  margin-left: 0px;
+}
+.ml-n0 {
+  margin-left: 0px;
+}
+.mr-0 {
+  margin-right: 0px;
+}
+.mr-n0 {
+  margin-right: 0px;
+}
+.m-1 {
+  margin: 4px;
+}
+.m-n1 {
+  margin: -4px;
+}
+.mt-1 {
+  margin-top: 4px;
+}
+.mt-n1 {
+  margin-top: -4px;
+}
+.mb-1 {
+  margin-bottom: 4px;
+}
+.mb-n1 {
+  margin-bottom: -4px;
+}
+.ml-1 {
+  margin-left: 4px;
+}
+.ml-n1 {
+  margin-left: -4px;
+}
+.mr-1 {
+  margin-right: 4px;
+}
+.mr-n1 {
+  margin-right: -4px;
+}
+.m-2 {
+  margin: 8px;
+}
+.m-n2 {
+  margin: -8px;
+}
+.mt-2 {
+  margin-top: 8px;
+}
+.mt-n2 {
+  margin-top: -8px;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-n2 {
+  margin-bottom: -8px;
+}
+.ml-2 {
+  margin-left: 8px;
+}
+.ml-n2 {
+  margin-left: -8px;
+}
+.mr-2 {
+  margin-right: 8px;
+}
+.mr-n2 {
+  margin-right: -8px;
+}
+.m-3 {
+  margin: 12px;
+}
+.m-n3 {
+  margin: -12px;
+}
+.mt-3, .app-todo-list__item-delete {
+  margin-top: 12px;
+}
+.mt-n3 {
+  margin-top: -12px;
+}
+.mb-3, .app-todo-list__item {
+  margin-bottom: 12px;
+}
+.mb-n3 {
+  margin-bottom: -12px;
+}
+.ml-3 {
+  margin-left: 12px;
+}
+.ml-n3 {
+  margin-left: -12px;
+}
+.mr-3 {
+  margin-right: 12px;
+}
+.mr-n3 {
+  margin-right: -12px;
+}
+.m-4 {
+  margin: 16px;
+}
+.m-n4 {
+  margin: -16px;
+}
+.mt-4 {
+  margin-top: 16px;
+}
+.mt-n4 {
+  margin-top: -16px;
+}
+.mb-4, .text-field {
+  margin-bottom: 16px;
+}
+.mb-n4 {
+  margin-bottom: -16px;
+}
+.ml-4 {
+  margin-left: 16px;
+}
+.ml-n4 {
+  margin-left: -16px;
+}
+.mr-4 {
+  margin-right: 16px;
+}
+.mr-n4 {
+  margin-right: -16px;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.ml-auto, .container {
+  margin-left: auto;
+}
+.mr-auto, .container {
+  margin-right: auto;
+}
+
+.p-0, body {
+  padding: 0px;
+}
+.pt-0 {
+  padding-top: 0px;
+}
+.pb-0 {
+  padding-bottom: 0px;
+}
+.pl-0 {
+  padding-left: 0px;
+}
+.pr-0 {
+  padding-right: 0px;
+}
+.p-1 {
+  padding: 4px;
+}
+.pt-1 {
+  padding-top: 4px;
+}
+.pb-1 {
+  padding-bottom: 4px;
+}
+.pl-1 {
+  padding-left: 4px;
+}
+.pr-1 {
+  padding-right: 4px;
+}
+.p-2 {
+  padding: 8px;
+}
+.pt-2 {
+  padding-top: 8px;
+}
+.pb-2 {
+  padding-bottom: 8px;
+}
+.pl-2 {
+  padding-left: 8px;
+}
+.pr-2 {
+  padding-right: 8px;
+}
+.p-3, .text-field {
+  padding: 12px;
+}
+.pt-3, .btn {
+  padding-top: 12px;
+}
+.pb-3, .btn {
+  padding-bottom: 12px;
+}
+.pl-3, .container {
+  padding-left: 12px;
+}
+.pr-3, .container {
+  padding-right: 12px;
+}
+.p-4, .app-todo-list__item, .card {
+  padding: 16px;
+}
+.pt-4 {
+  padding-top: 16px;
+}
+.pb-4 {
+  padding-bottom: 16px;
+}
+.pl-4, .btn {
+  padding-left: 16px;
+}
+.pr-4, .btn {
+  padding-right: 16px;
+}
+.pt-auto {
+  padding-top: auto;
+}
+.pb-auto {
+  padding-bottom: auto;
+}
+.pl-auto {
+  padding-left: auto;
+}
+.pr-auto {
+  padding-right: auto;
+}
+
+.d-none, .app-todo-list__item-delete {
+  display: none;
+}
+.d-block, .app-todo-list__item:hover .app-todo-list__item-delete {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-flex-start {
+  justify-content: flex-start;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex-flex-end {
+  justify-content: flex-end;
+}
+.flex-space-around {
+  justify-content: space-around;
+}
+.flex-space-between {
+  justify-content: space-between;
+}
+.flex-flex-start {
+  align-items: flex-start;
+}
+.flex-center {
+  align-items: center;
+}
+.flex-flex-end {
+  align-items: flex-end;
+}
+.flex-stretch {
+  align-items: stretch;
+}
+.flex-baseline {
+  align-items: baseline;
+}
+.flex-10 {
+  flex: 10%;
+}
+.flex-20 {
+  flex: 20%;
+}
+.flex-30 {
+  flex: 30%;
+}
+.flex-40 {
+  flex: 40%;
+}
+.flex-50 {
+  flex: 50%;
+}
+.flex-60 {
+  flex: 60%;
+}
+.flex-70 {
+  flex: 70%;
+}
+.flex-80 {
+  flex: 80%;
+}
+.flex-90 {
+  flex: 90%;
+}
+.flex-100 {
+  flex: 100%;
+}
+
+.w-10 {
+  width: 10%;
+}
+.w-20 {
+  width: 20%;
+}
+.w-30 {
+  width: 30%;
+}
+.w-40 {
+  width: 40%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-60 {
+  width: 60%;
+}
+.w-70 {
+  width: 70%;
+}
+.w-80 {
+  width: 80%;
+}
+.w-90 {
+  width: 90%;
+}
+.w-100, .text-field {
+  width: 100%;
+}
+.w-auto {
+  width: auto;
+}
+
+.h-10 {
+  height: 10%;
+}
+.h-20 {
+  height: 20%;
+}
+.h-30 {
+  height: 30%;
+}
+.h-40 {
+  height: 40%;
+}
+.h-50 {
+  height: 50%;
+}
+.h-60 {
+  height: 60%;
+}
+.h-70 {
+  height: 70%;
+}
+.h-80 {
+  height: 80%;
+}
+.h-90 {
+  height: 90%;
+}
+.h-100 {
+  height: 100%;
+}
+.h-auto {
+  height: auto;
+}
+
+.rounded-1, .app-todo-list__item-delete {
+  border-radius: 5px;
+}
+.rounded-2 {
+  border-radius: 6px;
+}
+.rounded-3 {
+  border-radius: 7px;
+}
+.rounded-4, .app-todo-list__item, .btn, .text-field, .card {
+  border-radius: 8px;
+}
+.rounded-5 {
+  border-radius: 9px;
+}
+.rounded-6 {
+  border-radius: 10px;
+}
+.rounded-7 {
+  border-radius: 11px;
+}
+.rounded-8 {
+  border-radius: 12px;
+}
+.rounded-9 {
+  border-radius: 13px;
+}
+.rounded-10 {
+  border-radius: 14px;
+}
+
+.box-shadow, .card {
+  box-shadow: 0 0 1rem rgba(220, 220, 220, 0.5);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.card {
+  background-color: white;
+}
+
+.text-field {
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  resize: vertical;
+}
+.text-field:active, .text-field:focus {
+  outline-color: var(--primary-color);
+}
+
+.btn {
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.btn.bg-primary:hover {
+  background-color: var(--primary-color-darken);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  position: relative;
+  transition: all 0.3s;
+  -webkit-appearance: none;
+  vertical-align: middle;
+  margin: 0;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+}
+input[type=checkbox]:before, input[type=checkbox]:after,
+input[type=radio]:before,
+input[type=radio]:after {
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+
+[type=checkbox]:before {
+  content: "✔";
+  display: inline-block;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  font-size: 0;
+  font-weight: bold;
+}
+[type=checkbox]:checked:before {
+  font-size: 14px;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+[type=radio] {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+}
+[type=radio]:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 9px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+[type=radio]:checked:before {
+  width: 14px;
+  height: 14px;
+  margin: 2px;
+}
+
+.app-header {
+  padding-top: 28px;
+  padding-bottom: 96px;
+  background-color: #1766e4;
+  background-image: url("../images/header-bg.jpg");
+  background-size: cover;
+}
+.app-title {
+  font-weight: bolder;
+  color: white;
+}
+.app-wrapper {
+  margin-top: -72px;
+}
+.app-filter {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.app-todo-list__item {
+  border-left: 5px solid var(--primary-color);
+  background-color: var(--bg-color);
+}
+.app-todo-list__item:last-child {
+  margin-bottom: 0 !important;
+}
+.app-todo-list__item.checked {
+  border-color: var(--bg-color-darken);
+}
+.app-todo-list__item.checked .app-todo-list__item-title,
+.app-todo-list__item.checked .app-todo-list__item-description,
+.app-todo-list__item.checked .app-todo-list__item-datetime {
+  text-decoration: line-through !important;
+}
+.app-todo-list__item-title {
+  font-size: 1rem;
+}
+.app-todo-list__item-description {
+  font-size: 0.825rem;
+}
+.app-todo-list__item-datetime {
+  font-size: 0.75rem;
+  color: dimgrey;
+  line-height: 1;
+}
+.app-todo-list__item-actions {
+  width: 20px;
+  text-align: center;
+}
+.app-todo-list__item-delete {
+  color: red;
+  background-color: #ffe0e0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
