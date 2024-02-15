@@ -566,6 +566,7 @@ input[type=radio]:after {
   background-color: #1766e4;
   background-image: url("../images/header-bg.jpg");
   background-size: cover;
+  background-position: top center;
 }
 .app-title {
   font-weight: bolder;
