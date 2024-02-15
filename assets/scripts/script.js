@@ -16,18 +16,20 @@ class ToDoApp {
 
     constructor() {
 
+        /* We set the HTML elements into the class */
         this._titleField = document.getElementById('todo-title')
         this._descriptionField = document.getElementById('todo-description')
         this._submitButton = document.getElementById('todo-submit')
         this._todoList = document.getElementById('todo-list')
         this._filterButtons = document.querySelectorAll('.app-filter button')
 
+        /* We get the input values of the elements in the "Todo form" */
         this._titleField.addEventListener('input', (e) => this.setTitle(e.target.value))
         this._descriptionField.addEventListener('input', (e) => this.setDescription(e.target.value))
         this._submitButton.addEventListener('click', () => this.addToList())
 
+        /* We take our list in LocaleStorage */
         const storageList = localStorage.getItem('todo-list')
-
         if (storageList) {
             this._list = JSON.parse(storageList)
         }
@@ -35,14 +37,17 @@ class ToDoApp {
         this.renderList()
     }
 
+    /* Function that sets the _title */
     setTitle(value) {
         this._title = value
     }
 
+    /* Function that sets the _description */
     setDescription(value) {
         this._description = value
     }
 
+    /* We add the last item we created to the list */
     addToList() {
 
         if (!this._title.trim()) {
@@ -80,6 +85,7 @@ class ToDoApp {
 
     }
 
+    /* We re-render items when there are changes in our list */
     renderList() {
 
         this._todoList.innerHTML = ''
@@ -97,6 +103,7 @@ class ToDoApp {
 
     }
 
+    /* We create html for each item and print it on the screen */
     createItemElement(item) {
         this._todoList.innerHTML =
             `<div class="app-todo-list__item d-flex flex-space-between ${item.completed ? 'checked' : ''}">
@@ -120,12 +127,14 @@ class ToDoApp {
             </div>` + this._todoList.innerHTML
     }
 
+    /* Function that works when the status of the item is checked */
     toggleChecked(e, id) {
         const item = this._list.find(item => item.id === id)
         item.completed = e.checked
         this.renderList()
     }
 
+    /* Function to delete items */
     deleteItem(e, id) {
         if(confirm('Are you sure you want to delete this item?')){
             const item = this._list.find(item => item.id === id)
@@ -135,10 +144,12 @@ class ToDoApp {
         }
     }
 
+    /* Function that saved our list in localeStorage */
     saveTodoList(){
         localStorage.setItem('todo-list', JSON.stringify(this._list))
     }
 
+    /* Function that sets the filter */
     setFilter(active) {
 
         this._filterButtons.forEach(btn => btn.classList.remove('bg-primary'))
@@ -151,6 +162,7 @@ class ToDoApp {
 
     }
 
+    /* Function to set the number of items by filters */
     setFilterCount(){
         this._filterButtons.forEach(btn => {
 
@@ -170,6 +182,7 @@ class ToDoApp {
         })
     }
 
+    /* Function to set the date format */
     getDateFormat(item){
         const options = {
             year: "numeric",
@@ -182,6 +195,7 @@ class ToDoApp {
         return new Intl.DateTimeFormat("ru-RU", options).format(new Date(item.createdAt))
     }
 
+    /* Function that filters the list according to the selected tab */
     get toDoList() {
 
         let list = []
